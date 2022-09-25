@@ -134,8 +134,19 @@ function sayHello(name, lastName, userName) {
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es un condicional?
+R: forma en ejecutar un bloque de codigo dependiendo de condicion o validacion.
+
 - ¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
+R: If, else, else if and switch
+
+las codiciones if, else, and else if permiten hacer validaciones completamente distintas en cada validacion.
+
+El switch todos los cases se comparan con la misma codicion o variale declarada en el switch al principio.
+
+
 - ¿Puedo combinar funciones y condicionales?
+R: Si, las funciones pueden encapsular cualquier bloque de codigo, incluyendo condicionales.
+
 
 ### 2️⃣ Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if:
 
@@ -157,6 +168,29 @@ switch (tipoDeSuscripcion) {
        break;
 }
 ```
+R:
+
+const tipoDeSuscripcion = "Basic";
+
+if (tipoDeSuscripcion == 'Free') {
+    console.log("Solo puedes tomar los cursos gratis");
+}
+else if (tipoDeSuscripcion == 'Basic') {
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+}
+else if (tipoDeSuscripcion == 'Expert') {
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+}
+else if (tipoDeSuscripcion == 'ExpertPlus') {
+    console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+}
+
+
+
+
+
+
+
 
 ### 3️⃣ Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
 
@@ -168,9 +202,20 @@ switch (tipoDeSuscripcion) {
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es un ciclo?
+R: Forma de ejecutar bloques de codigos hasta que se cumpla cierta condicion.
+
+
 - ¿Qué tipos de ciclos existen en JavaScript?
+R: While, do-while and for.
+
+
 - ¿Qué es un ciclo infinito y por qué es un problema?
+R: Es cuando nuestra validacion de la condicion para ejecutar nuestro ciclo nunca se cumple, terminan dañando la aplicacion. 
+
+
 - ¿Puedo mezclar ciclos y condicionales?
+R: Si ya que los ciclos son unos condicionales.
+
 
 ### 2️⃣ Replica el comportamiento de los siguientes ciclos for utilizando ciclos while:
 
@@ -179,14 +224,45 @@ for (let i = 0; i < 5; i++) {
     console.log("El valor de i es: " + i);
 }
 
+R: 
+let i = 0;
+while (i < 5) {
+    console.log("El valor de i es: " + i);
+    i++;
+}
+
+
+
 for (let i = 10; i >= 2; i--) {
     console.log("El valor de i es: " + i);
 }
+
+R: 
+let i = 10;
+while (i >= 2) {
+    console.log("El valor de i es: " + i);
+    i--;
+}
+
+
 ```
+
+
+
+
 
 ### 3️⃣ Escribe un código en JavaScript que le pregunte a los usuarios cuánto es `2 + 2`. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.
 
 > 💡 Pista: puedes usar la función prompt de JavaScript.
+
+```js
+R: 
+while (respuesta != '4') {
+    let pregunta = prompt('How much is 2 + 2?');
+    respuesta = pregunta;
+}
+```
+
 
 
 ## Listas
@@ -194,15 +270,69 @@ for (let i = 10; i >= 2; i--) {
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es un array?
+R: son una lista de elementos. Usan [].
+
+```js
+const array = [1, 3, 9, 5, false, true];
+```
+
+
 - ¿Qué es un objeto?
+R: son una lista de elementos, pero cada elemento tienen nombre clave. Usan {}.
+
+```js
+const obj = {
+    name: 'Skalex',
+    age: 40
+};
+```
+
+
 - ¿Cuándo es mejor usar objetos o arrays?
+R: Los arrays cuando lo que haremos en un elemento el los mismo que en todo lo demas. Hay exepciones.
+
+Un objeto cuando los nombres de cada elemento representan importancia en nuestro programa.
+
+
 - ¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
+R: Si!
+
+
 
 ### 2️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
 
+```js
+function printFirstElement(arr) {
+    console.log(arr[0]);
+}
+```
+
 ### 3️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
 
+```js
+function printElementByElement(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+}
+```
+
 ### 4️⃣ Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).
+
+```js
+
+Se usara Object.values:
+
+function printElementByElementObject(obj) {
+    const arr = Object.values(obj);
+    for(let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+}
+
+
+```
+
 
 
 ## ¿Cómo te fue? 🏆
