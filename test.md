@@ -21,27 +21,60 @@ Recuerda que **el éxito no se mide por cuánto tiempo te toma aprender**, esa m
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es una variable y para qué sirve?
+
+R: Son espacios en memoria donde podemos guardar informacion (dependiendo de los tipos y estructuras de datos que soporte nuestro lenguage).
+
 - ¿Cuál es la diferencia entre declarar e inicializar una variable?
-- ¿Cuál es la diferencia entre sumar números y concatenar strings?
-- ¿Cuál operador me permite sumar o concatenar?
+
+R: Declarar (let, const) es cuando le decimos a JavaScript que vamos a crear una variable con el nombre X. 
+   Inicializar es asignarle un valor a esa variable de nombre X.  
+
+
+- ¿Cuál es la diferencia entre sumar números y concatenar strings? y/o ¿Cuál operador me permite sumar o concatenar?
+
+let suma = 2 + 2;
+
+let string = "Hola, " + "Skalex"
+
+El operador que nos perimte sumar y concatenar es "+". Cuando se usa con numeros los que hace es sumar. Cuando lo hace con string los une como texto.
+
 
 ### 2️⃣ Determina el nombre y tipo de dato para almacenar en variables la siguiente información:
 
-- Nombre
-- Apellido
-- Nombre de usuario en Platzi
-- Edad
-- Correo electrónico
-- Mayor de edad
-- Dinero ahorrado
-- Deudas
+- Nombre: String
+- Apellido: String
+- Nombre de usuario en Platzi: String (@nombre, concatenarle un @)
+- Edad: Number
+- Correo electrónico: String (con @ y dominio .com)
+- Mayor de edad: boolean (true or false)
+- Dinero ahorrado: number
+- Deudas: number
 
 ### 3️⃣ Traduce a código JavaScript las variables del ejemplo anterior y deja tu código en los comentarios.
+
+```
+let name = 'Skalex';
+let lastName = 'Stuch';
+let userName = 'skalexstuch';
+let age = 40;
+let email = 'skalexstuch@me.com';
+let isItOlder = true;
+let savedMoney = 500;
+let debt = 90;
+```
 
 ### 4️⃣ Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior:
 
 - Nombre completo (nombre y apellido)
 - Dinero real (dinero ahorrado menos deudas)
+
+```
+let fullName = name + ' ' + lastName;
+let totalMoney = savedMoney - debt; 
+
+```
+
+
 
 
 ## Funciones
@@ -49,10 +82,31 @@ Recuerda que **el éxito no se mide por cuánto tiempo te toma aprender**, esa m
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es una función?
+R: Nos permiten encapsular (guardar) bloques de codigos para que sean reutilizables y ejecutables mas adeltante en el programa.
+
+```
+function fullName(name, lastName) {
+    return name + ' ' + lastName
+}
+
+fullName('any Name','any lastName')
+```
+
+
 - ¿Cuándo me sirve usar una función en mi código?
+R: Cuando tenemos varaiables o codigos repetidos o muy parecidos, que podemos encapsular y cambiar sus parametros y/o argumentos.
+
+Tambien sirve para ordernarnuestro codigo.
+
 - ¿Cuál es la diferencia entre parámetros y argumentos de una función?
+R: Los párametros se crean al momentos de hacer la funcion.
+
+Los argumentos se usan cuando estamos ejecutando la funcion.
+
+
 
 ### 2️⃣ Convierte el siguiente código en una función, pero, cambiando cuando sea necesario las variables constantes por parámetros y argumentos en una función:
+
 
 ```
 const name = "Juan David";
@@ -62,7 +116,18 @@ const nickname = "juandc";
 
 console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
 ```
+```
+function fullName(name, lastName) {
+    return name + ' ' + lastName
+}
 
+function sayHello(name, lastName, userName) {
+    const totalName = fullName(name, lastName);
+
+    console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+}
+
+```
 
 ## Condicionales
 
