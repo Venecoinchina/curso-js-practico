@@ -150,7 +150,7 @@ R: Si, las funciones pueden encapsular cualquier bloque de codigo, incluyendo co
 
 ### 2️⃣ Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if:
 
-```
+```js
 const tipoDeSuscripcion = "Basic";
 
 switch (tipoDeSuscripcion) {
@@ -169,7 +169,7 @@ switch (tipoDeSuscripcion) {
 }
 ```
 R:
-
+```js
 const tipoDeSuscripcion = "Basic";
 
 if (tipoDeSuscripcion == 'Free') {
@@ -185,7 +185,7 @@ else if (tipoDeSuscripcion == 'ExpertPlus') {
     console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
 }
 
-
+```
 
 
 
@@ -329,16 +329,49 @@ function printElementByElementObject(obj) {
         console.log(arr[i]);
     }
 }
-
-
 ```
+Ejercicio bonus: "Reduccion de Condicionales"
+
+### 3️⃣ Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
 
 
+```js
 
-## ¿Cómo te fue? 🏆
+function conseguirTipoSubscription (suscripcion) {
+    if (suscripcion == 'Free') {
+    console.log("Solo puedes tomar los cursos gratis");
+    return;
+    }
+    if (suscripcion == 'Basic') {
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+    return;
+    }
+    if (suscripcion == 'Expert') {
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+    return;
+    }
+    if (suscripcion == 'ExpertPlus') {
+    console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+    return;
+    }
+    console.warn('Eso no existe!');
+}
 
-**¡Felicidades por completar la prueba de JavaScript!** Confío en que hayas completado cada paso y hayas pausado para repasar los temas de los ejercicios que se te complicaron.
+> 💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays u objetos y un solo condicional. 😏
 
-Ahora sí, continúa a la siguiente clase, pero recuerda que **ya no puedes abandonar el curso**, debes completarlo hasta el final. No importa cuánto tiempo te tome. **Yo sé que tú puedes. Y tú deberías de saberlo también.**
+//Esto es un objeto:
+const tiposDeSuscripciones = {
+    free: 'Solo puedes tomar los cursos gratis',
+    basic: 'Puedes tomar casi todos los cursos de Platzi durante un mes',
+    expert: 'Puedes tomar casi todos los cursos de Platzi durante un año',
+    expertplus: 'Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año'
+}
 
-¡Te espero en la siguiente clase para comenzar!
+function conseguirTipoSubscription (suscripcion) {
+    if (tiposDeSuscripciones [suscripcion]) {
+        console.log(tiposDeSuscripciones [suscripcion]);
+        return;
+    }
+    console.warn('Eso no existe!');
+}
+```
