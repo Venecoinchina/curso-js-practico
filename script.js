@@ -1,17 +1,18 @@
-//document.blabla es una de las funciones de js!
-
 const h1 = document.querySelector('h1');
-const p = document.querySelector('p');
-const clase = document.querySelector('.test');
-const parrafito = document.querySelector('#id');
-const input = document.querySelector('input');
+const form = document.querySelector('#form');
+const input1 = document.querySelector('#calculo1');
+const input2 = document.querySelector('#calculo2');
+const btn = document.querySelector('#btnCalcular');
+const pResult = document.querySelector('#result');
 
-console.log(input.value);
+//Ahora vamos a escuchar los eventos que sucendan:
 
-console.log({
-    h1,
-    p,
-    clase,
-    parrafito,
-    input
-    });
+form.addEventListener('submit', sumarInputs);
+
+
+function sumarInputs (event) {
+    //console.log({event});
+    event.preventDefault();
+    const sumInputs = input1.value + input2.value;
+    pResult.innerText = "The Results is: " + sumInputs;
+}
